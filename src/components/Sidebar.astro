@@ -1,0 +1,21 @@
+---
+import NavLinks from "./NavLinks.astro";
+---
+
+<div>
+    <!-- Overlay para cerrar el sidebar al hacer clic fuera -->
+    <div
+        id="sidebar-overlay"
+        class="fixed inset-0 bg-black opacity-50 z-30 hidden md:hidden"
+    ></div>
+
+    <!-- Sidebar móvil -->
+    <div
+        id="sidebar"
+        class="fixed top-0 left-0 w-64 h-full mt-16 text-base bg-black font-work-sans text-md text-white transform -translate-x-full transition-transform duration-300 z-40 md:hidden"
+    >
+        <div class="p-4 flex flex-col gap-4">
+            <NavLinks withIcons={true} />
+        </div>
+    </div>
+</div>

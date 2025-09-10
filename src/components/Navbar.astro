@@ -1,0 +1,71 @@
+---
+import NavLinks from "./NavLinks.astro";
+import Sidebar from "./Sidebar.astro";
+---
+
+<nav class="fixed top-0 w-full z-50">
+    <div
+        class="md:hidden flex justify-between items-center px-4 h-16 bg-black text-white"
+    >
+        <!-- Botón hamburguesa -->
+        <button id="hamburger" class="text-2xl"> ☰ </button>
+
+        <!-- Botón contacto -->
+        <a
+            href="#contacto"
+            class="bg-white font-work-sans text-black font-semibold rounded-md px-4 py-1 text-sm"
+        >
+            Contáctanos
+        </a>
+    </div>
+
+    <div class="hidden md:flex justify-center">
+        <div
+            class="h-auto bg-black font-work-sans text-white rounded-xl mt-4 py-3 px-7 flex gap-8 items-center"
+        >
+            <NavLinks />
+            <!-- Botón contacto -->
+            <a
+                href="#contacto"
+                class="bg-white font-work-sans text-black font-semibold rounded-md px-4 py-1 text-sm"
+            >
+                Contáctanos
+            </a>
+        </div>
+    </div>
+
+    <!-- Sidebar móvil -->
+    <Sidebar />
+</nav>
+
+<!-- <script type="module">
+    document.getElementById("hamburger")?.addEventListener("click", () => {
+        document.getElementById("sidebar")?.classList.toggle("translate-x-0");
+    });
+</script> -->
+
+<script type="module">
+    const hamburger = document.getElementById("hamburger");
+    const sidebar = document.getElementById("sidebar");
+    const overlay = document.getElementById("sidebar-overlay");
+
+    const toggleSidebar = (show) => {
+        if (show) {
+            sidebar.classList.add("translate-x-0");
+            overlay.classList.remove("hidden");
+        } else {
+            sidebar.classList.remove("translate-x-0");
+            overlay.classList.add("hidden");
+        }
+    };
+
+    hamburger?.addEventListener("click", () => toggleSidebar(true));
+    overlay?.addEventListener("click", () => toggleSidebar(false));
+
+    // Cerrar al hacer clic en un enlace dentro del sidebar
+    sidebar?.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+            toggleSidebar(false);
+        }
+    });
+</script>

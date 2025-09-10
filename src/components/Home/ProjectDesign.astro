@@ -1,0 +1,165 @@
+
+
+<section class="w-full min-h-screen bg-bytesync relative overflow-hidden">
+    <!-- overlay -->
+    <div
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/20 via-black/50 to-black/70 z-0"
+    >
+    </div>
+
+    <div class="container relative mx-auto h-full flex flex-col pt-20 pb-8">
+        <div class="flex flex-col px-4">
+            <h2 class="text-4xl font-sora font-bold text-white mb-4">
+                Nuestro proceso de diseño y desarrollo Web
+            </h2>
+            <p class="text-lg font-work-sans text-white max-w-4xl mb-16">
+                En ByteSync, nos guiamos por un proceso de diseño y desarrollo
+                web estructurado y colaborativo. Desde la investigación inicial
+                hasta el lanzamiento, trabajamos en estrecha colaboración con
+                nuestros clientes para entender sus necesidades y crear
+                soluciones digitales funcionales que aporten valor real.
+            </p>
+        </div>
+        <div
+            id="step-1"
+            class="grid grid-cols-5 lg:grid-cols-6 gap-4 text-gray-500/50 font-work-sans px-4 lg:px-10 justify-center items-center"
+        >
+            <div
+                class="col-span-4 lg:col-span-4 border border-gray-500/50 rounded-lg p-4 flex flex-col justify-center"
+            >
+                <h3
+                    class="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold mb-2 text-left"
+                >
+                    1. Investigación y planificación
+                </h3>
+                <p class="text-[12px] md:text-base lg:text-lg text-left">
+                    Empezamos con una investigación profunda: analizamos el
+                    mercado, tu competencia y sobre todo, a tus usuarios.
+                </p>
+            </div>
+            <h2
+                class="step-number col-span-1 lg:col-span-2 text-center text-5xl md:text-[200px] lg:text-[400px]/[400px] font-bold text-gray-400 transition-all duration-500"
+            >
+                01
+            </h2>
+        </div>
+        <div class="w-full h-10"></div>
+        <div
+            id="step-2"
+            class="grid grid-cols-5 lg:grid-cols-6 gap-4 text-gray-500/50 font-work-sans px-4 lg:px-10 justify-center items-center"
+        >
+            <h2
+                class="step-number col-span-1 lg:col-span-2 text-center text-5xl md:text-[200px] lg:text-[400px]/[400px] font-bold text-gray-400 transition-all duration-500"
+            >
+                02
+            </h2>
+            <div
+                class="col-span-4 lg:col-span-4 border border-gray-500/50 rounded-lg p-4 flex flex-col justify-center"
+            >
+                <h3
+                    class="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold mb-2 text-left"
+                >
+                    2. Diseño y prototipado
+                </h3>
+                <p class="text-[12px] md:text-base lg:text-lg text-left">
+                    Empezamos con una investigación profunda: analizamos el
+                    mercado, tu competencia y sobre todo, a tus usuarios.
+                </p>
+            </div>
+        </div>
+        <div class="w-full h-10"></div>
+        <div
+            id="step-3"
+            class="grid grid-cols-5 lg:grid-cols-6 gap-4 text-gray-500/50 font-work-sans px-4 lg:px-10 justify-center items-center"
+        >
+            <div
+                class="col-span-4 lg:col-span-4 border border-gray-500/50 rounded-lg p-4 flex flex-col justify-center"
+            >
+                <h3
+                    class="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold mb-2 text-left"
+                >
+                    3. Desarrollo y programación
+                </h3>
+                <p class="text-[12px] md:text-base lg:text-lg text-left">
+                    Empezamos con una investigación profunda: analizamos el
+                    mercado, tu competencia y sobre todo, a tus usuarios.
+                </p>
+            </div>
+            <h2
+                class="step-number col-span-1 lg:col-span-2 text-center text-5xl md:text-[200px] lg:text-[400px]/[400px] font-bold text-gray-400 transition-all duration-500"
+            >
+                03
+            </h2>
+        </div>
+        <div class="w-full h-10"></div>
+        <div
+            id="step-4"
+            class="grid grid-cols-5 lg:grid-cols-6 gap-4 text-gray-500/50 font-work-sans px-4 lg:px-10 justify-center items-center"
+        >
+            <h2
+                class="step-number col-span-1 lg:col-span-2 text-center text-5xl md:text-[200px] lg:text-[400px]/[400px] font-bold text-gray-400 transition-all duration-500"
+            >
+                04
+            </h2>
+            <div
+                class="col-span-4 lg:col-span-4 border border-gray-500/50 rounded-lg p-4 flex flex-col justify-center"
+            >
+                <h3
+                    class="text-sm sm:text-lg md:text-xl lg:text-3xl font-bold mb-2 text-left"
+                >
+                    4. Pruebas y lanzamiento
+                </h3>
+                <p class="text-[12px] md:text-base lg:text-lg text-left">
+                    Empezamos con una investigación profunda: analizamos el
+                    mercado, tu competencia y sobre todo, a tus usuarios.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<style>
+.illuminate {
+    /* box-shadow: 0 0 32px 8px #fff, 0 0 64px 16px #00eaff80; */
+    border-color: white;
+    color: white;
+    transition: box-shadow 0.4s, border-color 0.4s;
+    background: linear-gradient(90deg, #00eaff22 0%, #fff0 100%);
+}
+.step-number {
+    color: #a3a3a384;
+    transform: scale(1);
+    transition: color 0.5s, transform 0.5s;
+}
+.step-number.active {
+    color: #fff;
+    transform: scale(1.08);
+}
+</style>
+
+<script is:inline>
+if (typeof window !== 'undefined') {
+  const steps = [1,2,3,4];
+  steps.forEach((num) => {
+    const step = document.getElementById(`step-${num}`);
+    if (!step) return;
+    const textContainer = step.querySelector('div.col-span-4');
+    const number = step.querySelector('h2.step-number');
+    if (!textContainer || !number) return;
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        if (entry.intersectionRatio >= 0.7) {
+          textContainer.classList.add('illuminate');
+          number.classList.add('active');
+        } else {
+          textContainer.classList.remove('illuminate');
+          number.classList.remove('active');
+        }
+      },
+      { threshold: [0.7, 1] }
+    );
+    observer.observe(step);
+  });
+}
+</script>

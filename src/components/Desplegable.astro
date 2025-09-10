@@ -1,0 +1,62 @@
+---
+import { Icon } from "astro-icon/components";
+
+interface Props {
+    titulo: string;
+    contenido: string;
+}
+
+const { titulo, contenido } = Astro.props;
+---
+
+<div
+    class="w-full bg-white rounded-lg shadow-lg border border-gray-100 overflow-hidden"
+>
+    <button
+        class="w-full flex justify-between items-center py-8 px-4 text-left focus:outline-none group"
+        onclick="toggleContent(this)"
+    >
+        <h3 class="text-xl font-bold text-gray-800 font-work-sans">{titulo}</h3>
+        <div
+            class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-400 group-data-[expanded=true]:bg-black"
+        >
+            <Icon
+                name="About us/Question/arrow-down"
+                class="text-2xl text-white transform transition-transform duration-300 group-data-[expanded=true]:rotate-180"
+            />
+        </div>
+    </button>
+    <div
+        class="max-h-0 overflow-hidden transition-all duration-300 ease-in-out"
+        style="transition: max-height 0.3s ease-in-out;"
+    >
+        <p class="px-8 pb-4 text-lg text-gray-700 font-work-sans">
+            {contenido}
+        </p>
+    </div>
+</div>
+
+<script is:inline>
+    window.toggleContent = function (button) {
+        const content = button.nextElementSibling;
+        const isExpanded = button.getAttribute("data-expanded") === "true";
+        const icon = button.querySelector("svg");
+
+        if (!isExpanded) {
+            content.style.maxHeight = content.scrollHeight + "px";
+            button.setAttribute("data-expanded", "true");
+        } else {
+            content.style.maxHeight = "0";
+            button.setAttribute("data-expanded", "false");
+        }
+    };
+
+    document.addEventListener("astro:page-load", () => {
+        const buttons = document.querySelectorAll(
+            'button[onclick="toggleContent(this)"]',
+        );
+        buttons.forEach((button) => {
+            button.setAttribute("data-expanded", "false");
+        });
+    });
+</script>

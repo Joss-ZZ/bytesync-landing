@@ -1,0 +1,177 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const missionIcon = document.querySelector(
+            '[data-icon="About us/Values/Mision"]',
+        );
+        const vissionIcon = document.querySelector(
+            '[data-icon="About us/Values/Vision"]',
+        );
+        const valuesIcon = document.querySelector(
+            '[data-icon="About us/Values/Values"]',
+        );
+
+        const titlePrinciples = document.getElementById("principles");
+        const containerMision = document.getElementById("mision");
+        const containerVision = document.getElementById("vision");
+        const containerValores = document.getElementById("valores");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("animate");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.2, // Se activa cuando el 30% del elemento es visible
+            },
+        );
+
+        if (missionIcon) {
+            observer.observe(missionIcon);
+        }
+
+        if (vissionIcon) {
+            observer.observe(vissionIcon);
+        }
+
+        if (valuesIcon) {
+            observer.observe(valuesIcon);
+        }
+
+        const observer2 = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("text-slide-right");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.4, // Se activa cuando el 30% del elemento es visible
+            },
+        );
+
+        if (titlePrinciples) {
+            observer2.observe(titlePrinciples);
+        }
+        if (containerVision) {
+            observer2.observe(containerVision);
+        }
+
+        const observer3 = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("text-slide-left");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.4, // Se activa cuando el 30% del elemento es visible
+            },
+        );
+
+        if (containerMision) {
+            observer3.observe(containerMision);
+        }
+        if (containerValores) {
+            observer3.observe(containerValores);
+        }
+    });
+</script>
+
+<section class="w-full min-h-screen bg-bytesync relative overflow-hidden">
+    <!-- overlay -->
+    <div
+        class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-black/20 via-black/50 to-black/70 z-0"
+    >
+    </div>
+
+    <!-- Principles -->
+    <div class="container relative mx-auto h-full flex flex-col pt-20 pb-8">
+        <div id="principles" class="flex flex-col px-4">
+            <h2 class="text-4xl font-sora font-bold text-white mb-4">
+                Nuestros Principios
+            </h2>
+            <p class="text-lg font-work-sans text-white max-w-2xl mb-16">
+                En ByteSync, nos guiamos por principios fundamentales que
+                definen nuestra forma de trabajar y nuestra relación con los
+                clientes. Creemos en la transparencia, la colaboración y la
+                innovación constante.
+            </p>
+        </div>
+
+        <!-- Misión -->
+        <div class="grid grid-cols-5 gap-10 text-white mb-8">
+            <div class="icon-wrapper col-span-2">
+                <Icon
+                    name="About us/Values/Mision"
+                    class="text-[230px] sm:text-[320px] xl:text-[550px] transform -translate-x-[35%] lg:-translate-x-[15%]"
+                />
+            </div>
+            <div id="mision" class="col-span-3 flex flex-col gap-4 pr-4 justify-center">
+                <h3 class="font-bold text-2xl sm:text-3xl md:text-4xl">
+                    Misión
+                </h3>
+                <p class="text-xs sm:tex-xl md:text-2xl">
+                    Crear soluciones digitales funcionales que aporten valor
+                    real, combinando creatividad, estrategia y tecnología para
+                    impulsar el crecimiento de nuestros clientes.
+                </p>
+            </div>
+        </div>
+
+        <!-- Visión -->
+
+        <div class="grid grid-cols-5 gap-10 text-white mb-8">
+            <div  id="vision"
+                class="col-span-3 flex flex-col gap-4 pl-4 lg:pl-16 justify-center"
+            >
+                <h3 class="font-bold text-2xl sm:text-3xl md:text-4xl">
+                    Visión
+                </h3>
+                <p class="text-sm sm:tex-xl md:text-2xl">
+                    Ser un referente en diseño y desarrollo digital, reconocido
+                    por nuestra calidad, innovación y compromiso con cada
+                    proyecto.
+                </p>
+            </div>
+            <div class="icon-wrapper col-span-2">
+                <Icon
+                    name="About us/Values/Vision"
+                    class="text-[230px] sm:text-[320px] xl:text-[550px] transform translate-x-[5%]"
+                />
+            </div>
+        </div>
+
+        <!-- Valores -->
+
+        <div class="grid grid-cols-5 gap-10 text-white">
+            <div class="icon-wrapper col-span-2">
+                <Icon
+                    name="About us/Values/Values"
+                    class="text-[230px] sm:text-[320px] xl:text-[550px] transform -translate-x-[35%] lg:-translate-x-[15%]"
+                />
+            </div>
+            <div  id="valores" class="col-span-3 flex flex-col gap-4 pr-4 justify-center">
+                <h3 class="font-bold text-2xl sm:text-3xl md:text-4xl">
+                    Valores
+                </h3>
+                <p class="text-sm sm:tex-xl md:text-2xl">
+                    Creatividad, honestidad, colaboración y excelencia. Estos
+                    valores guían nuestro trabajo y definen la forma en que
+                    construimos relaciones y resultados.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

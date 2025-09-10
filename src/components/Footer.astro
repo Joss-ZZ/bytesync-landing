@@ -1,0 +1,99 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<footer class="w-full bg-black text-white font-work-sans">
+    <div
+        class="container mx-auto px-4 py-12 grid grid-cols-1 md:grid-cols-2 gap-8"
+    >
+        <!-- Columna izquierda: Logo + descripción + servicios -->
+        <div class="grid grid-cols-4 gap-6">
+            <!-- Logo + descripción + servicios -->
+            <div class="flex flex-col gap-4 col-span-2">
+                <img
+                    src="/logo-largo.png"
+                    alt="Logo de ByteSync"
+                    class="max-w-32"
+                />
+                <p class="text-sm">
+                    Somos tu aliado digital para construir experiencias web
+                    modernas y eficientes.
+                </p>
+            </div>
+
+            <!-- Servicios -->
+            <div class="flex flex-col gap-3 col-span-2">
+                <h3 class="text-base font-sora mb-1">Servicios</h3>
+                <ul class="flex flex-col gap-1 text-sm">
+                    <li>
+                        <a href="#" class="hover:underline"
+                            >Desarrollo de software</a
+                        >
+                    </li>
+                    <li><a href="#" class="hover:underline">Sitios web</a></li>
+                    <li>
+                        <a href="#" class="hover:underline"
+                            >Aplicaciones móviles</a
+                        >
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Columna derecha: Contacto + redes sociales -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <!-- Contacto -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-base font-sora">Contáctanos</h3>
+                <ul class="flex flex-col gap-2 text-sm">
+                    <li class="flex items-center gap-2">
+                        <Icon name="Home/Footer/POint" class="text-xl" />
+                        Lima, Perú
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Icon name="Home/Footer/email" class="text-xl" />
+                        contact@bytesync.com
+                    </li>
+                    <li class="flex items-center gap-2">
+                        <Icon name="Home/Footer/phone" class="text-xl" />
+                        +51 999 999 999
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Redes sociales -->
+            <div class="flex flex-col gap-4">
+                <h3 class="text-base font-sora">Síguenos</h3>
+                <div class="flex gap-4 text-2xl">
+                    <a href="https://www.facebook.com" aria-label="Facebook">
+                        <Icon name="Home/Footer/facebook" />
+                    </a>
+                    <a href="https://www.instagram.com" aria-label="Instagram">
+                        <Icon name="Home/Footer/instagram" />
+                    </a>
+                    <a href="https://www.youtube.com" aria-label="YouTube">
+                        <Icon name="Home/Footer/youtube" />
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Derechos -->
+    <div class="flex bg-white text-black py-4 px-8 text-sm font-work-sans items-center justify-center lg:justify-between w-full">
+        <!-- Móvil: solo el texto principal -->
+        <span class="block lg:hidden text-center"> 2025 ByteSync. Todos los derechos reservados.</span>
+        <!-- Desktop: izquierda y derecha -->
+        <div class="hidden lg:flex w-full justify-between items-center">
+            <div class="flex gap-4 items-center">
+                <span> 2025 ByteSync. Todos los derechos reservados.</span>
+                <span>P.iva: 0257568677</span>
+            </div>
+            <div class="flex gap-6 items-center">
+                <span>Termino y Condiciones</span>
+                <span>Cookies</span>
+                <span>Créditos</span>
+            </div>
+        </div>
+    </div>
+</footer>

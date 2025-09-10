@@ -1,0 +1,54 @@
+---
+import Desplegable from "../Desplegable.astro";
+---
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const desp1 = document.getElementById("desp1");
+        const desp2 = document.getElementById("desp2");
+        const desp3 = document.getElementById("desp3");
+
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("text-slide-right");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            },
+            {
+                threshold: 0.2, // Se activa cuando el 30% del elemento es visible
+            },
+        );
+
+        if(desp1) {
+            observer.observe(desp1);
+        }
+        if(desp2) {
+            observer.observe(desp2);
+        }
+        if(desp3) {
+            observer.observe(desp3);
+        }
+    });
+</script>
+
+<section class="w-full h-auto py-16 px-8 lg:px-20 bg-white flex flex-col gap-8">
+    <div class="container mx-auto flex flex-col gap-4">
+        <h2 class="text-4xl font-sora font-bold mb-4">Preguntas Frecuentes</h2>
+        <p class="text-lg font-work-sans">
+            Resuelve tus dudas más frecuentes aquí. Si necesitas más información, ¡contáctanos!
+        </p>
+    </div>
+    <div class="container mx-auto flex flex-col gap-4">
+        <div id="desp1">
+            <Desplegable titulo="¿Cuánto tiempo tomará desarrollar mi sitio web o aplicación?" contenido="El tiempo de desarrollo depende de la complejidad del proyecto, pero te proporcionamos un cronograma detallado desde el inicio para que siempre estés informado." />
+        </div>
+        <div id="desp2">
+            <Desplegable titulo="¿Qué tipo de soporte ofreces después del lanzamiento?" contenido="Ofrecemos soporte continuo para resolver cualquier inconveniente, actualizaciones o ajustes necesarios una vez que el proyecto esté en funcionamiento." />
+        </div>
+        <div id="desp3">
+            <Desplegable titulo="¿Puedo hacer cambios durante el proceso de desarrollo?" contenido="Sí, trabajamos de cerca contigo durante todo el proceso para asegurarnos de que el resultado final cumpla con tus expectativas, y estamos abiertos a ajustes según sea necesario." />
+        </div>
+    </div>
+</section>

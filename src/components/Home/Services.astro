@@ -1,0 +1,95 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section
+    class="w-full h-auto py-16 px-8 relative flex items-center justify-center bg-white overflow-hidden bg-gradient-to-b from-bytesync to-black"
+>
+    <h1
+        class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-[20vw] font-extrabold text-white opacity-10 select-none pointer-events-none"
+    >
+        ByteSync
+    </h1>
+
+    <div class="z-10 flex flex-col md:px-8 md:py-12 lg:px-16 lg:py-16">
+        <h2 class="text-5xl text-balance font-extrabold text-white font-sora">
+            Nuestro enfoque
+        </h2>
+        <p class="mt-4 text-base text-white">
+            Transformamos ideas en soluciones digitales claras, funcionales y
+            con estilo.
+        </p>
+        <div
+            class="w-full h-full grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-white mt-4"
+        >
+            <!-- card border blanco fondo vidrio -->
+            <div
+                class="flex flex-col justify-center border border-white/30 rounded-3xl p-8 md:py-10 lg:py-12 shadow-xl glass-card"
+            >
+                <!-- icon -->
+                <Icon
+                    name={"Home/Services/solar_pen-outline"}
+                    class="text-7xl mb-4 text-white drop-shadow-lg0"
+                />
+                <!-- titulo -->
+                <h3
+                    class="font-sora text-2xl font-bold mt-2 mb-2 text-white "
+                >
+                    Diseño UX/UI
+                </h3>
+                <!-- descripcion -->
+                <p
+                    class="mt-2 text-base text-white "
+                >
+                    Creamos interfaces intuitivas, atractivas y pensadas para el
+                    usuario. Diseño que no solo se ve bien, también se siente
+                    bien.
+                </p>
+            </div>
+            <div
+                class="flex flex-col justify-center border border-white/30 rounded-3xl p-8 md:py-10 lg:py-12 shadow-xl glass-card"
+            >
+                <!-- icon -->
+                <Icon
+                    name={"Home/Services/majesticons_iphone-x-apps"}
+                    class="text-7xl mb-4 text-white drop-shadow-lg "
+                />
+                <!-- titulo -->
+                <h3
+                    class="font-sora text-2xl font-bold mt-2 mb-2 text-white "
+                >
+                    Desarrollo de Apps
+                </h3>
+                <!-- descripcion -->
+                <p
+                    class="mt-2 text-base text-white"
+                >
+                    Construimos apps rápidas, funcionales y hechas a la medida
+                    de tu idea. Desde el concepto hasta el lanzamiento.
+                </p>
+            </div>
+            <div
+                class="flex flex-col justify-center border border-white/30 rounded-3xl p-8 md:py-10 lg:py-12 shadow-xl glass-card"
+            >
+                <!-- icon -->
+                <Icon
+                    name={"Home/Services/mynaui_terminal"}
+                    class="text-7xl mb-4 text-white drop-shadow-lg "
+                />
+                <!-- titulo -->
+                <h3
+                    class="font-sora text-2xl font-bold mt-2 mb-2 text-white "
+                >
+                    Desarrollo Web
+                </h3>
+                <!-- descripcion -->
+                <p
+                    class="mt-2 text-base text-white"
+                >
+                    Sitios web modernos, optimizados y listos para crecer
+                    contigo. Con tecnología y diseño que hacen equipo.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>

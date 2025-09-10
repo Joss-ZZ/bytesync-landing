@@ -1,0 +1,20 @@
+---
+import { Icon } from 'astro-icon/components';
+const { withIcons = false } = Astro.props;
+
+const links = [
+  { href: '/', label: 'Home', icon: 'Nav/MaterialSymbolsHomeRounded' },
+  { href: '/servicios', label: 'Servicios', icon: 'Nav/material-symbols_linked-services' },
+  { href: '/Nosotros', label: 'Nosotros', icon: 'Nav/material-symbols_info' },
+];
+---
+
+{links.map(link => (
+  <a
+    href={link.href}
+    class="flex items-center gap-2 hover:underline"
+  >
+    {withIcons && <Icon name={link.icon} />}
+    <span>{link.label}</span>
+  </a>
+))}

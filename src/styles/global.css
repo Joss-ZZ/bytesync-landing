@@ -1,0 +1,146 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Work Sans';
+    src: url('/Tipography/Text/WorkSans-VariableFont_wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Sora';
+    src: url('/Tipography/Titles/Sora-VariableFont_wght.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@theme {
+    --font-work-sans: 'Work Sans', sans-serif;
+    --font-sora: 'Sora';
+    --color-bytesync: oklch(57.29% 0.127 238.17)
+}
+
+/* Animación para el logo */
+@keyframes logoFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo-fade-up {
+  animation: logoFadeUp 3s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Animación para el texto: sale desde la izquierda */
+@keyframes textSlideRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-slide-right {
+  animation: textSlideRight 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+@keyframes textSlideLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.text-slide-left {
+  animation: textSlideLeft 2s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+}
+
+/* Glassmorphism card effect for Services section */
+.glass-card {
+  background: linear-gradient(135deg, rgba(57, 49, 133, 0.18) 0%, rgba(0,0,0,0.12) 100%), rgba(255,255,255,0.08);
+  backdrop-filter: blur(5px) saturate(140%);
+  -webkit-backdrop-filter: blur(5px) saturate(140%);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+  border: 1.5px solid rgba(255,255,255,0.27);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+/* Animation for the mission icon */
+@keyframes missionIconAnimationLeftToRight {
+  0% {
+    transform: translateX(-100%) scale(0.8) scaleX(1);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(0%) scale(0.8) scaleX(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(0%) scale(0.8) scaleX(-1);
+  }
+  80% {
+    transform: translateX(0%) scale(0.8) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0%) scale(1) scaleX(1);
+  }
+}
+
+@keyframes missionIconAnimationRightToLeft {
+  0% {
+    transform: translateX(100%) scale(0.8) scaleX(1);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(0%) scale(0.8) scaleX(1);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(0%) scale(0.8) scaleX(-1);
+  }
+  80% {
+    transform: translateX(0%) scale(0.8) scaleX(-1);
+  }
+  100% {
+    transform: translateX(0%) scale(1) scaleX(1);
+  }
+}
+
+.icon-wrapper {
+  perspective: 1000px;
+}
+
+/* Apply the animation to the mission icon when visible */
+[data-icon="About us/Values/Mision"].animate {
+  animation: missionIconAnimationLeftToRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+[data-icon="About us/Values/Vision"].animate {
+  animation: missionIconAnimationRightToLeft 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
+[data-icon="About us/Values/Values"].animate {
+  animation: missionIconAnimationLeftToRight 2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+}
+
