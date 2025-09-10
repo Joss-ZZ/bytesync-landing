@@ -31,7 +31,7 @@ jobs:
       - name: Subir artefacto de build
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./dist   # Astro genera aquí los archivos estáticos
+          path: ./dist   # Astro genera aquí los archivos estáticoss
 
   deploy:
     needs: build
